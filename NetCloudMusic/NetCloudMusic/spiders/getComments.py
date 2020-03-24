@@ -95,7 +95,7 @@ class CommentCrawlClass(object):
         if comment_count:
             comment_info.append(data)
             if comment_count > 20:
-                for offset in range(20,int(comment_count),20):
+                for offset in range(20,int(200),20):
                     comment = self.get_json_data(self.comment_url,offset=offset)
                     comment_info.append(comment)
         return comment_info
@@ -105,7 +105,17 @@ class CommentCrawlClass(object):
         '''
         album_comment_info = []
         if comment_count:
-            for offset in range(0,int(comment_count),20):
+            for offset in range(0,int(100),20):
                 comment = self.get_json_data(self.comment_url,offset=offset)
+                album_comment_info.append(comment)
+        return album_comment_info
+
+    def get_playlist_comment(self,comment_count):
+        '''某歌单下全部评论
+        '''
+        album_comment_info = []
+        if comment_count:
+            for offset in range(0, int(100), 20):
+                comment = self.get_json_data(self.comment_url, offset=offset)
                 album_comment_info.append(comment)
         return album_comment_info

@@ -5,8 +5,9 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymongo
+
 from scrapy.conf import settings
-from NetCloudMusic.items import NetCloudMusicSongItem,NetCloudMusicAlbumListItem,NetCloudMusicAlbumItem,NetCloudMusicArtistItem
+from NetCloudMusic.items import NetCloudMusicSongItem,NetCloudMusicAlbumListItem,NetCloudMusicAlbumItem,NetCloudMusicArtistItem,NetCloudMusicPlaylistItem
 
 
 class NetCloudMusicPipeline(object):
@@ -55,5 +56,28 @@ class NetCloudMusicPipeline(object):
             self.artist = self.db[settings['MONGODB_COL_SONG']]
             self.artist.insert_one(song_infos)
             print('NetCloudMusicSongItem - > success')
+
+        return item
+
+
+
+class NetCloudMusicPlaylistPipeline(object):
+
+    def __init__(self):
+        client = pymongo.MongoClient(
+            settings['MONGODB_HOST'],
+            settings['MONGODB_PORT']
+        )
+        db_name = settings['MONGODB_DBNAME']
+        self.db = client[db_name]
+        self.playlist = self.db[settings['MONGODB_COL_PLAYLIST']]
+
+    def process_item(self, item, spider):
+        flag=self.playlist.find_one({"playlist_id":item['playlist_id']})
+        print(flag,item['playlist_id'])
+        if isinstance(item, NetCloudMusicPlaylistItem) and flag:
+            playlist_infos = dict(item)
+            self.playlist.insert_one(playlist_infos)
+            print('NetCloudMusicPlaylistItem - > success')
 
         return item

@@ -7,6 +7,45 @@
 
 from scrapy import signals
 
+from fake_useragent import UserAgent
+from NetCloudMusic.proxySpider import GetIP
+
+class RandomUserAgentAndIpMiddleware(object):
+    def __init__(self, crawler):
+        super(RandomUserAgentAndIpMiddleware, self).__init__()
+
+        self.ua = UserAgent()
+        self.per_proxy = crawler.settings.get('RANDOM_UA_PER_PROXY', True)
+        self.ua_type = crawler.settings.get('RANDOM_UA_TYPE', 'random')
+        self.proxy2ua = {}
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler)
+
+    def process_request(self, request, spider):
+        # get_ip = GetIP()  # 自己定义获取proxy ip函数
+        # ip=GetIP().get_random_ip()
+        # print(ip)
+        # request.meta["proxy"] = ip
+
+        def get_ua():
+            '''Gets random UA based on the type setting (random, firefox…)'''
+            return getattr(self.ua, self.ua_type)
+
+        # print(self.per_proxy)
+        if self.per_proxy:
+            proxy = request.meta.get('proxy')
+            if proxy not in self.proxy2ua:
+                self.proxy2ua[proxy] = get_ua()
+
+                # logger.debug('Assign User-Agent %s to Proxy %s'
+                #              % (self.proxy2ua[proxy], proxy))
+            request.headers.setdefault('User-Agent', self.proxy2ua[proxy])
+            # print(self.proxy2ua[proxy])
+        else:
+            ua = get_ua()
+            request.headers.setdefault('User-Agent', get_ua())
 
 class NetCloudMusicSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,

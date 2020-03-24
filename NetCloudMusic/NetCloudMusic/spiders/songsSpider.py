@@ -6,10 +6,12 @@ from bs4 import BeautifulSoup
 class SongsspiderSpider(scrapy.Spider):
     name = 'songsSpider'
     allowed_domains = ['music.163.com']
-    start_urls = ['https://music.163.com/']
+    start_urls = ['http://music.163.com/']
     #男女国家分类
+    # group_ids = (1001,)
     group_ids = (1001, 1002, 1003, 2001, 2002, 2003, 6001, 6002, 6003, 7001, 7002, 7003, 4001, 4002, 4003)
     # 歌手姓名首字母id
+    # initials = [i for i in range(65, 66)] + [0]
     initials = [i for i in range(65, 91)] + [0]
     count=0
     headers = {
@@ -33,6 +35,7 @@ class SongsspiderSpider(scrapy.Spider):
                 album_url = p_url.split('?')
                 item['artist_id'] = int(re.compile(r'\d+').findall(p_url)[0])
                 item['aritst_url'] = 'http://music.163.com' + p_url
+                print(f'爬取http://music.163.com{p_url}')
                 item['album_url'] = 'http://music.163.com' + album_url[0] + '/album?' + album_url[1]
                 item['artist_name'] = li.xpath('//a[@class="nm nm-icn f-thide s-fc0"]/text()').extract()[0]
                 data=requests.get(url=item['aritst_url'],headers=self.headers).text
@@ -61,12 +64,14 @@ class SongsspiderSpider(scrapy.Spider):
         # inspect_response(response, self)
         item = NetCloudMusicAlbumListItem()
         singer_id = response.url[38:]
+        print(f'爬取歌手{singer_id}下所有专辑')
         item['album_id'] = singer_id
         item['album_url'] = response.url
         item['album_author_id']=response.meta['artist_id']
         item['album_author_name']=response.meta['artist_name']
         #歌手专辑页,页数
-        page_count = self.get_album_list_page(response)
+        page_count = 1
+        #page_count = self.get_album_list_page(response)
         album_list = self.get_artist_album_info(singer_id, page_count)
         item['album_list_info'] = album_list
 
@@ -81,7 +86,7 @@ class SongsspiderSpider(scrapy.Spider):
         '''获取每张专辑里的所有歌曲列表
         '''
         item = NetCloudMusicAlbumItem()
-        album_id = response.url[30:]
+        album_id = response.url[31:]
         comment_url = 'http://music.163.com/weapi/v1/resource/comments/R_AL_3_%s?csrf_token=' % album_id
         item['album_id'] = album_id
         item['album_url'] = response.url
@@ -102,14 +107,15 @@ class SongsspiderSpider(scrapy.Spider):
                 yield scrapy.Request(url=song_url, headers=self.headers, method='GET', callback=self.parse_song)
 
     def parse_song(self, response):
+
         item = NetCloudMusicSongItem()
-        song_id = response.url[29:]
+        song_id = response.url[30:]
+
         item['song_id'] = song_id
         comment_url = 'http://music.163.com/weapi/v1/resource/comments/R_SO_4_%s?csrf_token=' % song_id
         item['song_url'] = response.url
         item['lyric'] = self.get_lyric(song_id)
         item['song_info'] = self.get_song_info(song_id)
-        print(item['song_info'])
         item['song_comments'] = CommentCrawlClass(comment_url).get_song_comment()
         yield item
 
@@ -128,7 +134,6 @@ class SongsspiderSpider(scrapy.Spider):
         '''
         album_list = []
         albums_url = 'http://music.163.com/api/artist/albums/%s' % singer_id
-        print(albums_url)
         for offset in range(0, page_count):
             params = {
                 'id': singer_id,

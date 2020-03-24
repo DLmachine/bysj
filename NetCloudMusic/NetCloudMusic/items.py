@@ -55,7 +55,13 @@ class NetCloudMusicSongItem(scrapy.Item):
     song_comments = scrapy.Field()
     song_comment_count = scrapy.Field()
 
-class NetCloudMusicUserItem(scrapy.Item):
-    name=scrapy.Field()
-    id=scrapy.Field()
-    listen_song=scrapy.Field()
+class NetCloudMusicPlaylistItem(scrapy.Item):
+    '''每个歌单信息
+    '''
+    _id = scrapy.Field()
+    playlist_id = scrapy.Field()
+    playlist_name = scrapy.Field()
+    playlist_url = scrapy.Field()
+    playlist_info = scrapy.Field()
+    playlist_comments = scrapy.Field()
+    playlist_comment_count = scrapy.Field()
