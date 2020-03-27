@@ -39,8 +39,8 @@
           <span>{{item.song_name}}</span>
           <span v-if="item.song_sing_name">{{item.song_sing_name}}</span>
           <span v-else>未知歌手</span>
-          <span v-if="playing != item.song_id" @click="playMusic({url:'../../static/music.m4a', id:item.song_id})">已暂停</span>
-          <span @click="playMusic({url:'../../static/music.m4a', id:item.song_id})" v-else>播放中</span>
+          <span v-if="playing != item.song_id" @click="playMusic({url:'http://music.163.com/song/media/outer/url?id=64006.mp3', id:item.song_id})">已暂停</span>
+          <span @click="playMusic({url:'http://music.163.com/song/media/outer/url?id=64006.mp3', id:item.song_id})" v-else>播放中</span>
         </li>
       </ul>
     </div>

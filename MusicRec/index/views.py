@@ -18,36 +18,39 @@ from index import recRight as rec_right
 
 # 用户选择登录
 @csrf_exempt
-def login(request):
-    if request.method == "GET":
-        # 返回选择的用户、歌手、歌曲
-        users = User.objects.order_by("?").values("u_id","u_name")[:30]
-        songs = Song.objects.order_by("?").values("song_id","song_name")[:30]
-        sings = Sing.objects.order_by("?").values("sing_id","sing_name")[:20]
-        return JsonResponse({
-            "code":1,
-            "data":{
-                "users": { one["u_id"]: one["u_name"] for one in users },
-                "songs": { one["song_id"]: one["song_name"] for one in songs },
-                "sings": { one["sing_id"]: one["sing_name"] for one in sings }
-            }
-        })
-    else:
-        # 将用户信息写入session
-        request.session["username"] = request.POST.get("username")
-        request.session["sings"] = request.POST.get("sings")
-        request.session["songs"] = request.POST.get("songs")
-        # 信息进行记录
-        wirteBrowse(user_name=request.POST.get("username"),user_click_time=getLocalTime(),desc="登录系统")
-        return JsonResponse({
-            "code":1,
-            "data":{
-                "username":request.POST.get("username"),
-                "songs": request.POST.get("songs"),
-                "sings": request.POST.get("sings")
-            }
-        })
+# def login(request):
+#     if request.method == "GET":
+#         # 返回选择的用户、歌手、歌曲
+#         users = User.objects.order_by("?").values("u_id","u_name")[:30]
+#         songs = Song.objects.order_by("?").values("song_id","song_name")[:30]
+#         sings = Sing.objects.order_by("?").values("sing_id","sing_name")[:20]
+#         return JsonResponse({
+#             "code":1,
+#             "data":{
+#                 "users": { one["u_id"]: one["u_name"] for one in users },
+#                 "songs": { one["song_id"]: one["song_name"] for one in songs },
+#                 "sings": { one["sing_id"]: one["sing_name"] for one in sings }
+#             }
+#         })
+#     else:
+#         # 将用户信息写入session
+#         request.session["username"] = request.POST.get("username")
+#         request.session["sings"] = request.POST.get("sings")
+#         request.session["songs"] = request.POST.get("songs")
+#         # 信息进行记录
+#         wirteBrowse(user_name=request.POST.get("username"),user_click_time=getLocalTime(),desc="登录系统")
+#         return JsonResponse({
+#             "code":1,
+#             "data":{
+#                 "username":request.POST.get("username"),
+#                 "songs": request.POST.get("songs"),
+#                 "sings": request.POST.get("sings")
+#             }
+#         })
 
+def login(request):
+    print(request)
+    return JsonResponse({"state": 1, "data": 'dengluchenggong'})
 # 切换用户
 def switchuser(request):
     if "username" in request.session.keys():
