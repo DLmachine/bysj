@@ -39,8 +39,7 @@ export default {
     }),
     emitGetNews: function (cateid) {
       this.$emit('onGetnews', {'cateid': cateid})
-    },
-    waitlayout: function () {
+    },waitlayout: function () {
       this.$layer.confirm('确定退出当前用户，切换其他用户？', {title: '亲～'}, () => {
         this.layout()
         this.$layer.closeAll()
@@ -60,6 +59,7 @@ export default {
         console.log(err)
       })
     },
+
     getCates: function () {
       this.loading('加载中。。。')
       getCateData().then((res) => {

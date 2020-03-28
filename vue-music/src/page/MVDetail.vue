@@ -1,7 +1,7 @@
 <template>
   <div class="detail-container" v-bind:style="fullSceen">
     <div class="detail-header">
-      <h1><router-link to="/">Ryan' music</router-link></h1>
+      <h1><router-link to="/">MusicRecSys</router-link></h1>
     </div>
     <div v-if="MvDetail" class="main clearfix">
         <video autoplay :src="MvDetail.src" controls="controls" width="1200"></video>
@@ -20,6 +20,7 @@ export default {
   },
   async created() {
     let match = window.location.pathname.split("/");
+    console.log(match)
     let tyep = match[2];
     let id = match[3];
     this.getMV(id);
@@ -43,6 +44,7 @@ export default {
   methods: {
     async getMV(id) {
       let result = await this.$api.getMV(id);
+      console.log(result)
       if (result.code === 200) {
         this.MvDetail = result.data;
       }

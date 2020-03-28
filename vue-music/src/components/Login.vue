@@ -66,6 +66,8 @@ export default {
                         .then((data) => {
                           console.log(data.data)
                             if (data.data.state == 1) {
+                                this.$cookies.set("username",this.ruleForm2.username);
+                                console.log(this.ruleForm2.username)
                                 this.$message({
                                     type: 'success',
                                     message: data.data.data

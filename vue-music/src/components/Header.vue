@@ -8,7 +8,16 @@
           </li>
         </ul>
         <div class="search-container"><el-input v-model="searchVaue" placeholder="搜索音乐、歌手" suffix-icon="el-icon-search" @keyup.enter.native="submit"></el-input></div>
-        <div class="login"><router-link v-bind:to="'/login'"> 登录 | 注册</router-link></div>
+        <div class="login">
+          <span v-if="this.$cookies.get('username')">
+            <div class="userbtn">{{this.$cookies.get('username')}} <span  @click="changeUser" class="layouticon"> | <router-link v-bind:to="'/login'"> 注销</router-link></span></div>
+          </span>
+          <span v-else>
+           <router-link v-bind:to="'/login'"> 登录 | 注册</router-link>
+          </span>
+
+
+        </div>
     </div>
 
   </div>
@@ -64,10 +73,18 @@ export default {
         }
       ],
       activeIndex: 0,
-      searchVaue: ''
+      searchVaue: '',
+      user:''
     };
   },
+
   methods: {
+
+    changeUser() {
+      this.$cookies.remove('username');
+      this.$router.push('/login');
+      this.$router.push('/');
+    },
     active(index) {
       this.activeIndex = index;
     },
@@ -128,5 +145,11 @@ export default {
   margin-left: 1300px;
   font-size: 18px;
   width: 220px;
+}
+.father-ul li:hover .drop-div {
+  display: block;
+}
+.drop-div {
+  display: none;
 }
 </style>

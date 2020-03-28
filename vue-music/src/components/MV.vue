@@ -7,14 +7,14 @@
         <ul class="main clearfix">
           <li  v-for="(item, index) in page" :key="index" class="song-menu-item">
             <div class="show-img scale-img">
-              <router-link target="_blank" v-bind:to="'/play/mv/'+item.id">
+              <router-link v-bind:to="'/play/mv/'+item.id">
                 <img v-bind:src="item.picUrl" alt="">
                 <div class="mask">
                   <i class="el-icon-caret-right"></i>
                 </div>
               </router-link>
             </div>
-            <h3 class="nowrap-text"><router-link target="_blank" v-bind:to="'/play/mv/'+item.id">{{ item.name }}</router-link></h3>
+            <h3 class="nowrap-text"><router-link v-bind:to="'/play/mv/'+item.id">{{ item.name }}</router-link></h3>
             <div><span>播放量：{{ Math.floor(item.playCount)}}</span></div>
           </li>
         </ul>

@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <p>© 2018 - 04 - Ryan' music </p>
+    <p>© 2018 - 04 - MusicRecSys </p>
     <p>- 本站采用 vue+ element-ui 搭建 -</p>
   </div>
 </template>

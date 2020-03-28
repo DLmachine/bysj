@@ -70,7 +70,7 @@ export default class Api {
   //获取MV
   static async getMV(id){
     let result = {};
-    let url =host + `mv?mvid=${id}`
+    let url =host + `mv/detail?mvid=${id}`
     try {
       result = await axios(url);
     } catch (e) {
@@ -79,12 +79,13 @@ export default class Api {
     if(result.status === 200){
       let temp = [];
       let data = result.data.data;
+      console.log(data)
       let song = {};
       song.id = data.id;
       song.title = data.name;
       song.artist = data.artists.map(item => item.name).join(" / ");
       song.singerId = data.artistName;
-      song.src = host +`mv/url?url=`+ Object.values(data.brs)[Object.keys(data.brs).length-1];
+      song.src = Object.values(data.brs)[Object.keys(data.brs).length-1];
       song.lrc = `${host}lyric?id=${data.id}`;
       song.pic = data.cover;
 

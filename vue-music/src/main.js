@@ -10,6 +10,7 @@ import store from './store/index'
 import './assets/css/public.css'
 import './element-variables.scss'
 import host from '../config/host'
+import VueCookies from 'vue-cookies'
 import {
   Pagination,
   Dialog,
@@ -143,7 +144,7 @@ Vue.use(Header);
 Vue.use(Aside);
 Vue.use(Main);
 Vue.use(Footer);
-
+Vue.use(VueCookies)
 
 Vue.use(Loading.directive);
 

@@ -45,6 +45,7 @@ export default {
   methods: {
     async getSonglist(offset, limit, pagesize){
       let result = await this.$hotApi.getSonglist(offset, limit);
+
       if(result.code === 200){
           this.songlist =splitArray(result.data, pagesize)
         }else{
@@ -69,6 +70,7 @@ export default {
       let result = await this.$hotApi.getHotMv(offset, limit);
       if(result.code === 200){
           this.MvList = splitArray(result.data, pagesize);
+          console.log(this.MvList)
         }else{
           this.$message({
               message: "获取数据出错",

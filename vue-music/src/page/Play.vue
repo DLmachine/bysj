@@ -1,7 +1,7 @@
 <template>
   <div class="detail-container" v-bind:style="fullSceen">
     <div class="detail-header">
-      <h1><router-link to="/">Ryan' music</router-link></h1>
+      <h1><router-link to="/">MusicRecSys</router-link></h1>
     </div>
     <div class="main clearfix">
         <aplayer
