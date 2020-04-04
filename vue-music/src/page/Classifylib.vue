@@ -1,21 +1,23 @@
 <template>
   <div>
     <Header />
-   分类歌单
+    <ClassifyComponent />
     <Footer />
   </div>
 </template>
 
 <script>
 import Header from '../components/Header'
+import ClassifyComponent from '../components/ClassifyComponent'
 import Footer from '../components/Footer'
 
 
 export default {
-  name: 'Artists',
+  name: 'Classify',
   components: {
     Header,
-    Footer
+    Footer,
+    ClassifyComponent
   },
   data(){
     return {

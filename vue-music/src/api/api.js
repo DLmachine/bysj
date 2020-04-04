@@ -172,7 +172,52 @@ export default class Api {
       return response(result.status, [])
     }
 
+  static async getClassifyDetail(id){
+      let result = {};
+      let url =host + `dj/detail?rid=${id}`
+      try {
+        result = await axios(url);
+      } catch (e) { }
+      //获取电台节目
+      let program = null;
+      let programRs = {};
+      try {
+        programRs = await axios(host + `dj/program?rid=${id}&limit=100`);
+      } catch (e) { }
+      if(programRs.status === 200){
+        program = programRs.data.programs;
+      }else{
+        return response(result.status, [])
+      }
 
+      if(result.status === 200){
+        let data = result.data.djRadio;
+          let radio = {};
+          radio.id = data.id;
+          radio.name = data.name;
+          radio.desc = data.desc;
+          radio.category = data.category;
+          radio.rcmdText = data.rcmdText;
+          radio.programs = program?program.map(item=>{
+            let program = {};
+            program.id = item.mainSong.id;
+            program.title = item.name;
+            program.artist = item.dj.nickname;
+            program.singerId = null;
+            program.album = data.name;
+            program.playTime = moment.clock(item.duration);
+            program.src = `http://music.163.com/song/media/outer/url?id=${
+              item.mainSong.id
+            }.mp3`;
+            program.lrc = `${host}lyric?id=${item.mainSong.id}`;
+            program.picUrl = item.coverUrl;
+            return program;
+          }).reverse():null;
+          radio.picUrl = data.picUrl;
+        return response(200, radio)
+      }
+      return response(result.status, [])
+    }
     //获取搜索
   static async getSearch(key, offset, limit) {
     let result = {};

@@ -66,10 +66,15 @@ export default {
           name: "电台",
           path: "/radio"
         },
+        // {
+        //   key: 5,
+        //   name: "MV",
+        //   path: "/mv"
+        // },
         {
-          key: 5,
-          name: "MV",
-          path: "/mv"
+          key: 6,
+          name: "歌单分类",
+          path: "/classify"
         }
       ],
       activeIndex: 0,

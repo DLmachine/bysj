@@ -256,7 +256,53 @@ export default class Api {
       }
       return response(result.status, [])
     }
+    //获取歌单分类
+    static async getClassifyCategory(){
+      let result = null;
+      try {
+        result = await axios(host + `playlist/catlist`);
+      } catch (e) {
+        console.log(e)
+      }
+      if (result.status === 200) {
+        let classifies=result.data.categories;
+        let classify = result.data.sub.map(item=>{
+            let classify ={};
+            classify.id = item.category;
+            classify.name = item.name;
+            return classify;
+        });
+        return response(result.status, classify)
+      }
+      return response(result.status, [])
+    }
+    //获取歌单分类下内容
 
+  static async getCalssify(id){
+    console.log(id)
+    let result=null;
+      try {
+        result = await axios(host + `top/playlist/${id}`);
+      } catch (e) {
+        console.log(e)
+      }
+      if (result.status === 200) {
+        let radios = result.data.playlists.map(item=>{
+            let radio ={};
+            radio.id = item.id;
+            radio.name = item.name;
+            radio.category = item.category;
+            radio.categoryId = item.categoryId;
+            radio.picUrl = item.coverImgUrl;
+            radio.rcmdtext = item.description;
+            radio.programCount = item.playCount;
+            return radio;
+        });
+        return response(result.status, radios)
+      }
+      return response(result.status, [])
+
+  }
     //获取电台推荐
     static async getRadio(id){
       let result = null;

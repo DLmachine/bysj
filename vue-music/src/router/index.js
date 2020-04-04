@@ -50,7 +50,7 @@ const router = new Router({
       component: Ranklib
     },
     {
-      path: '/classify',
+      path: '/classify/:id?',
       name: 'Classifylib',
       component: Classifylib
     },
