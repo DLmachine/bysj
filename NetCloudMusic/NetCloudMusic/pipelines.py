@@ -75,7 +75,7 @@ class NetCloudMusicPlaylistPipeline(object):
     def process_item(self, item, spider):
         flag=self.playlist.find_one({"playlist_id":item['playlist_id']})
         print(flag,item['playlist_id'])
-        if isinstance(item, NetCloudMusicPlaylistItem) and flag:
+        if isinstance(item, NetCloudMusicPlaylistItem) and not flag:
             playlist_infos = dict(item)
             self.playlist.insert_one(playlist_infos)
             print('NetCloudMusicPlaylistItem - > success')

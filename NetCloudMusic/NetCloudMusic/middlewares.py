@@ -22,12 +22,29 @@ class RandomUserAgentAndIpMiddleware(object):
     @classmethod
     def from_crawler(cls, crawler):
         return cls(crawler)
-
+    def judge_ip(self,ip):
+        #判断ip是否可用
+        http_url = "http://www.baidu.com"
+        proxy_url = ip
+        try:
+            proxy = {'http_type': ip+":"+str(port)}
+            response = requests.get(http_url,proxies=proxy)
+        except Exception as e:
+            print("Invalid ip and port")
+            return False
+        else:
+            code = response.status_code
+            if code >= 200 and code < 300:
+                print('effective ip')
+                return True
+            else:
+                print("Invalid ip and port")
+                return False
     def process_request(self, request, spider):
-        # get_ip = GetIP()  # 自己定义获取proxy ip函数
-        # ip=GetIP().get_random_ip()
-        # print(ip)
-        # request.meta["proxy"] = ip
+        get_ip = GetIP()  # 自己定义获取proxy ip函数
+        ip=get_ip.get_random_ip()
+        if(self.judge_ip(ip)):
+            request.meta["proxy"] = ip
 
         def get_ua():
             '''Gets random UA based on the type setting (random, firefox…)'''

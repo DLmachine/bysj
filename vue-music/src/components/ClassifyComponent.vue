@@ -14,7 +14,6 @@
           <ul class="clearfix">
             <li v-if="currentCategory.length" v-for="(item, index) in currentCategory" :key="index" @click="active1(index)" class="radio-menu-item  text-center">
               <h3 v-if="activeIndex==item.id"><router-link v-bind:class="active1Index===index?'nav-link-active':''"v-bind:to="'/classify/?cat='+item.name">{{ item.name }}</router-link></h3>
-
             </li>
           </ul>
         </div>
