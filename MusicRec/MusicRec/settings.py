@@ -11,6 +11,21 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from pymongo import MongoClient
+
+conn=MongoClient('127.0.0.1',27017)
+db=conn.NetCloudMusic
+PlayListCatlist=db.PlayListCatlist
+PlaylistInfo=db.PlaylistInfo
+SongInfo=db.SongInfo
+SongDetail=db.SongDetail
+SingerInfo=db.SingerInfo
+SongUrl=db.SongUrl
+SongLyric=db.SongLyric
+SongAvailable=db.SongAvailable
+SongComment=db.SongComment
+SongSim=db.SongSim
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +40,7 @@ SECRET_KEY = '(hx$0fw#ymgh5w$z!#2n+=4o4+9nzth_5@zxnzshp0rb*iryie'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 
 # Application definition
@@ -44,20 +59,47 @@ INSTALLED_APPS = [
     'user',
     'index',
 ]
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_ALLOW_ALL = True
+
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ALLOW_METHODS = (
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+)
 
+CORS_ALL_HEADERS = (
+    'XMLHttpRequest',
+    'X_FILENAME',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'Pragma',
+)
+
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = ['http://localhost:8080',]
 ROOT_URLCONF = 'MusicRec.urls'
 
 TEMPLATES = [

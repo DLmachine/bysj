@@ -115,6 +115,7 @@ def getUserCreatePL(uid):
     user_click_time = models.DateTimeField(blank=False, verbose_name="浏览时间")
     desc = models.CharField(blank=False, max_length=1000, verbose_name="备注",default="Are you ready!")
 """
+
 def wirteBrowse(user_name="",click_id="",click_cate="",user_click_time="",desc=""):
     if "12797496" in click_id: click_id = "12797496"
     UserBrowse(user_name=user_name,

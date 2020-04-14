@@ -2,21 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86e7f358-d80c-4d59-a2b0-9c70beae210b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/middlewares.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/data/music/item_index2entity_id.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/data/music/item_index2entity_id.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/data/music/kg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/data/music/kg.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/data/music/kg_final.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/data/music/kg_final.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/data/music/ratings_final.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/data/music/ratings_final.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/data/music/user_artists.dat" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/data/music/user_artists.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/model/music/vocab/entity_emb_matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/model/music/vocab/entity_emb_matrix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/model/music/vocab/item_emb_matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/model/music/vocab/item_emb_matrix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/model/music/vocab/relation_emb_matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/model/music/vocab/relation_emb_matrix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/model/music/vocab/user_emb_matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/model/music/vocab/user_emb_matrix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MKR/predict_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/MKR/predict_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/MusicRec/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/MusicRec/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/index/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/index/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/index/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/playlist/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/playlist/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/playlist/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/playlist/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/sing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/sing/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/sing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/sing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/song/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/song/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/song/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/song/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/song/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/song/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/user/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/user/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicRec/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicRec/user/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/proxySpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/proxySpider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-music/src/components/ClassifyComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-music/src/components/ClassifyComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-music/src/api/hot.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-music/src/api/hot.js" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/MusicRec-Vue/node_modules/" />
+    <ignored path="$PROJECT_DIR$/vue-music/node_modules/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/bysj$tests.coverage" NAME="tests Coverage Results" MODIFIED="1585294342820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MusicRec/song" />
+    <SUITE FILE_PATH="coverage/bysj$tests.coverage" NAME="tests Coverage Results" MODIFIED="1586851362675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MusicRec/song" />
+    <SUITE FILE_PATH="coverage/bysj$predict_test.coverage" NAME="predict_test Coverage Results" MODIFIED="1586673567833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MKR" />
+    <SUITE FILE_PATH="coverage/bysj$preprocess.coverage" NAME="preprocess Coverage Results" MODIFIED="1586673602105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MKR" />
+    <SUITE FILE_PATH="coverage/bysj$data2kg.coverage" NAME="data2kg Coverage Results" MODIFIED="1586673276309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MKR" />
+    <SUITE FILE_PATH="coverage/bysj$main.coverage" NAME="main Coverage Results" MODIFIED="1586673352746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MKR" />
+    <SUITE FILE_PATH="coverage/bysj$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1586654021323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MusicRec/user" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -32,17 +59,243 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="bysj" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MusicRec/sing/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="137" column="28" lean-forward="true" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
+              <folding>
+                <element signature="e#23#59#0" expanded="true" />
+                <element signature="e#204#1528#0" />
+                <element signature="e#1737#2556#0" />
+                <element signature="e#2603#2982#0" />
+                <element signature="e#3024#3307#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MusicRec/sing/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding>
+                <element signature="e#632#664#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MusicRec/song/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-music/src/api/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="65" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MusicRec/song/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+              <folding>
+                <element signature="e#632#664#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MusicRec/MusicRec/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+              <folding>
+                <element signature="e#307#316#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>print</find>
+      <find>null</find>
+      <find>true</find>
+      <find>false</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>None</replace>
+      <replace>True</replace>
+      <replace>False</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/proxySpider.py" />
+        <option value="$PROJECT_DIR$/vue-music/src/api/hot.js" />
+        <option value="$PROJECT_DIR$/MusicRec/user/tests.py" />
+        <option value="$PROJECT_DIR$/MKR/main.py" />
+        <option value="$PROJECT_DIR$/MKR/data2kg.py" />
+        <option value="$PROJECT_DIR$/MKR/predict_test.py" />
+        <option value="$PROJECT_DIR$/MusicRec/user/views.py" />
+        <option value="$PROJECT_DIR$/MusicRec/MusicRec/urls.py" />
+        <option value="$PROJECT_DIR$/MusicRec/index/urls.py" />
+        <option value="$PROJECT_DIR$/MusicRec/index/views.py" />
+        <option value="$PROJECT_DIR$/MusicRec/playlist/urls.py" />
+        <option value="$PROJECT_DIR$/MusicRec/playlist/views.py" />
+        <option value="$PROJECT_DIR$/MusicRec/song/tests.py" />
+        <option value="$PROJECT_DIR$/MusicRec/song/urls.py" />
+        <option value="$PROJECT_DIR$/MusicRec/song/views.py" />
+        <option value="$PROJECT_DIR$/MusicRec/MusicRec/settings.py" />
+        <option value="$PROJECT_DIR$/MusicRec/sing/urls.py" />
+        <option value="$PROJECT_DIR$/MusicRec/sing/views.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
   <component name="ProjectId" id="1aQFmMWvHLVFm9dt419YWkBgN4w" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+              <item name="playlist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+              <item name="sing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+              <item name="song" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+              <item name="z-others" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="MusicRec" type="462c0819:PsiDirectoryNode" />
+              <item name="z-others" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCloudMusic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCloudMusic" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCloudMusic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCloudMusic" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCloudMusic" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-music" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-music" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bysj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bysj" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-music" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -67,7 +320,107 @@
       <recent name="D:\bysj\vue-music\src\page" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.tests">
+    <configuration name="data2kg" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bysj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MKR" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MKR/data2kg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bysj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MKR" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MKR/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="predict_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bysj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MKR" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MKR/predict_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="preprocess" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bysj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MKR" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MKR/preprocess.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="bysj" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,6 +446,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.tests" />
+        <item itemvalue="Python.preprocess" />
+        <item itemvalue="Python.predict_test" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.data2kg" />
       </list>
     </recent_temporary>
   </component>
@@ -124,6 +481,8 @@
       <workItem from="1585803856047" duration="23000" />
       <workItem from="1585969511898" duration="18163000" />
       <workItem from="1586660073662" duration="3580000" />
+      <workItem from="1586717636882" duration="27821000" />
+      <workItem from="1586838324640" duration="14748000" />
     </task>
     <task id="LOCAL-00001" summary="用户登录完善，知道大部分api得数据格式，未来可能移步深度学习">
       <created>1585404317814</created>
@@ -142,6 +501,9 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="49748000" />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -150,6 +512,56 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49913645" visible="true" weight="0.18690096" />
+      <window_info id="Structure" order="1" sideWeight="0.50180507" side_tool="true" weight="0.18530351" />
+      <window_info id="Favorites" order="2" sideWeight="0.50086355" side_tool="true" weight="0.18530351" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22037652" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32890365" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.6234773" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.49390918" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32890365" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.20819491" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -172,5 +584,334 @@
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="606" y="259" width="707" height="536" key="find.popup/0.27.1920.1001@0.27.1920.1001" timestamp="1586661904335" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MusicRec/user/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1004">
+          <caret line="99" column="39" lean-forward="true" selection-start-line="99" selection-start-column="39" selection-end-line="99" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/spiders/getPlaylist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="59" column="78" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/spiders/getComments.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="120" column="33" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="33" />
+          <folding>
+            <element signature="e#252#499#0" />
+            <element signature="e#545#676#0" />
+            <element signature="e#727#1060#0" />
+            <element signature="e#1119#1294#0" />
+            <element signature="e#1343#2113#0" />
+            <element signature="e#2162#2437#0" />
+            <element signature="e#3026#3484#0" />
+            <element signature="e#3541#3832#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/proxySpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-music/src/page/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding>
+            <element signature="e#246#287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-music/src/components/Header.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-music/src/components/SongListRecommend.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-music/src/api/hot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MKR/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MKR/predict_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MKR/data_loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MKR/data2kg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MKR/data/music/item_index2entity_id.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260729">
+          <caret line="15337" column="17" selection-start-line="15337" selection-start-column="17" selection-end-line="15337" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MKR/data/music/kg.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/user/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MKR/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1258">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#24#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-music/config/dev.env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-music/config/host.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-music/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/user/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/index/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="45" />
+          <folding>
+            <element signature="e#1978#3387#0" />
+            <element signature="e#1983#3357#0" />
+            <element signature="e#1996#2240#0" />
+            <element signature="e#2319#3351#0" />
+            <element signature="e#3430#6475#0" />
+            <element signature="e#6742#8623#0" />
+            <element signature="e#8756#24426#0" />
+            <element signature="e#24632#86085#0" />
+            <element signature="e#91997#171085#0" />
+            <element signature="e#171155#174239#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/z-others/api/GetSingMess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="67" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/playlist/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="171" column="31" selection-start-line="171" selection-start-column="31" selection-end-line="171" selection-end-column="31" />
+          <folding>
+            <element signature="e#23#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCloudMusic/NetCloudMusic/spiders/songsSpider.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/playlist/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding>
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/MusicRec/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/index/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="122" selection-start-line="16" selection-start-column="122" selection-end-line="16" selection-end-column="122" />
+          <folding>
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/song/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
+          <folding>
+            <element signature="e#23#59#0" expanded="true" />
+            <element signature="e#216#1596#0" />
+            <element signature="e#1624#1770#0" />
+            <element signature="e#1794#2978#0" />
+            <element signature="e#3025#3452#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/song/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+          <folding>
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-music/src/api/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="65" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/MusicRec/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding>
+            <element signature="e#307#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/song/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/sing/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicRec/sing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="137" column="28" lean-forward="true" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
+          <folding>
+            <element signature="e#23#59#0" expanded="true" />
+            <element signature="e#204#1528#0" />
+            <element signature="e#1737#2556#0" />
+            <element signature="e#2603#2982#0" />
+            <element signature="e#3024#3307#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

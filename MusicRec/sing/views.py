@@ -3,6 +3,8 @@ from django.http import JsonResponse
 from sing.models import Sing,SingTag,SingSim
 from user.views import wirteBrowse,getLocalTime
 from song.models import Song
+
+from MusicRec.settings import SingerInfo
 def all(request):
     # 接口传入的tag参数
     tag = request.GET.get("tag")
@@ -95,3 +97,42 @@ def getSingerSong(sid):
             "song_publish_time": one.song_publish_time,
         })
     return result
+
+
+#获取所有歌手
+
+def list(request):
+    limit=int(request.GET.get('limit'))
+    offset=int(request.GET.get('offset'))
+    data=SingerInfo.find({}).limit(int(limit)).skip(offset*limit)
+    res={}
+    res['artists']=[]
+    for item in data:
+        print(item['artist'])
+        res['artists'].append(
+            item['artist']
+        )
+    return JsonResponse(res)
+
+def top(request):
+    limit = int(request.GET.get('limit'))
+    offset = int(request.GET.get('offset'))
+    data = SingerInfo.find({}).limit(int(limit)).skip(offset * limit)
+    res = {}
+    res['artists'] = []
+    for item in data:
+        print(item['artist'])
+        res['artists'].append(
+            item['artist']
+        )
+    return JsonResponse(res)
+
+def artists(request):
+    id=request.GET.get('id')
+    data = SingerInfo.find({'id':int(id)})
+    res = {}
+
+    for item in data:
+        res=item
+    res.pop('_id')
+    return JsonResponse(res)

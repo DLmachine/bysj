@@ -7,7 +7,7 @@ from user.views import wirteBrowse,getLocalTime
 
 from django.db.models import Q
 
-
+from MusicRec.settings import PlayListCatlist,PlaylistInfo
 # 获取所有歌单
 def all(request):
     # 接口传入的tag参数
@@ -123,3 +123,55 @@ def getRecBasedOne(pl_id):
             "cate": "2"
         })
     return rec_pl_list
+
+#歌单分类，全部
+def catlist(request):
+    data=PlayListCatlist.find({})
+    res={}
+    for item in data:
+        res['code']=item['code']
+        res['all']=item['all']
+        res['sub']=item['sub']
+        res['categories']=item['categories']
+    return JsonResponse(res)
+
+#获取精选歌单
+def top(request):
+    limit=int(request.GET.get('limit'))
+    cat=request.GET.get('cat')
+    offset=int(request.GET.get('offset'))
+    print(cat,limit,offset)
+    if cat=='全部':
+        data=PlaylistInfo.find({}).limit(limit).skip(offset)
+    else:
+        data = PlaylistInfo.find({'playlist_info.playlist.tags':{'$in':[cat]}}).limit(limit).skip(offset)
+
+    res={}
+    res['playlists']=[]
+    for item in data:
+        playlist={
+            'id':item['playlist_id'],
+            'name':item['playlist_name'],
+            'coverImgUrl':item['playlist_info']['playlist']['coverImgUrl'],
+        }
+        res['playlists'].append(playlist)
+    return JsonResponse(res)
+#获取歌单详情
+def detail(request):
+    id=request.GET.get('id')
+    print(id)
+    data=PlaylistInfo.find({'playlist_id':id})
+    res={}
+    res['playlist']={}
+    for item in data:
+        res['playlist']['id']=item['playlist_id']
+        res['playlist']['name']=item['playlist_name']
+        res['playlist']['creator']=item['playlist_info']['playlist']['creator']
+        res['playlist']['createTime']=item['playlist_info']['playlist']['createTime']
+        res['playlist']['trackIds']=item['playlist_info']['playlist']['trackIds']
+        res['playlist']['tracks']=item['playlist_info']['playlist']['tracks']
+        res['playlist']['tags']=item['playlist_info']['playlist']['tags']
+        res['playlist']['picUrl']=item['playlist_info']['playlist']['coverImgUrl']
+        res['playlist']['description']=item['playlist_info']['playlist']['description']
+    return JsonResponse(res)
+

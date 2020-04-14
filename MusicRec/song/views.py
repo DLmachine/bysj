@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from song.models import Song,SongLysic,SongTag,SongSim
 from sing.models import Sing
 from user.views import wirteBrowse,getLocalTime
-
+from MusicRec.settings import SongDetail,SongUrl,SongLyric,SongAvailable,SongComment,SongSim
 def all(request):
     # 接口传入的tag参数
     tag = request.GET.get("tag")
@@ -92,3 +92,69 @@ def getRecBasedOne(song_id):
 
         })
     return result
+
+
+def check(request):
+    id = request.GET.get('id')
+    res={}
+    data=SongAvailable.find({'id':int(id)})
+    for item in data:
+        res['success']=item['success']
+        res['message']=item['message']
+    return JsonResponse(res)
+
+def songurl(request):
+    id=request.GET.get('id')
+    data=SongUrl.find({'id':int(id)})
+    res={}
+    for item in data:
+        res=item
+    res.pop('_id')
+    return JsonResponse(res)
+
+def detail(request):
+    ids=request.GET.get('ids')
+    ids_list=ids.split(',')
+    res = {}
+    if len(ids_list)==1:
+        data=SongDetail.find({'id':int(ids)})
+        for item in data:
+            res=item
+        res.pop('_id')
+    else:
+        res['songs']=[]
+        for id in ids_list:
+            data = SongDetail.find({'id': int(id)})
+            for item in data:
+                item.pop('_id')
+                res['songs'].append(item)
+    return JsonResponse(res)
+
+def comment(request):
+    ids=request.GET.get('id')
+    limit=request.GET.get('limit')
+    data=SongComment.find({'id':int(ids)}).limit(int(limit))
+    res={}
+    for item in data:
+        res=item
+    res.pop('_id')
+    print(res)
+    return JsonResponse(res)
+
+def lyric(request):
+    ids = request.GET.get('id')
+    data = SongLyric.find({'id': int(ids)})
+    res={}
+    for item in data:
+        res = item
+    res.pop('_id')
+    return JsonResponse(res)
+
+def sim(request):
+    ids = request.GET.get('id')
+    data = SongSim.find({'id': int(ids)})
+    res = {}
+    for item in data:
+        res = item
+    res.pop('_id')
+    return JsonResponse(res)

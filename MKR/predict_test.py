@@ -19,7 +19,7 @@ def pre_scores():
 
         # userid, itemid in ratings_final.txt
         item_id_data = head_id_data = [i for i in range(1000)]
-        user_id_data = [0] * len(item_id_data)
+        user_id_data = [1606] * len(item_id_data)
 
         pre_score = sess.run([pred_all],
                              feed_dict={user_id: user_id_data,

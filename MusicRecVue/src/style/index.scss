@@ -1,0 +1,147 @@
+@import './reset.scss';
+@import './transition.scss';
+
+@font-face {
+  font-family: "webfont";
+  font-display: swap;
+  src: url("//at.alicdn.com/t/webfont_0k851y8ee3z.eot");
+  /* IE9*/
+  src: url("//at.alicdn.com/t/webfont_0k851y8ee3z.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */
+    url("//at.alicdn.com/t/webfont_0k851y8ee3z.woff2") format("woff2"),
+    url("//at.alicdn.com/t/webfont_0k851y8ee3z.woff") format("woff"),
+    /* chrome、firefox */
+    url("//at.alicdn.com/t/webfont_0k851y8ee3z.ttf") format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("//at.alicdn.com/t/webfont_0k851y8ee3z.svg#Alibaba-PuHuiTi-Regular") format("svg");
+  /* iOS 4.1- */
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  font-family: "webfont", "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #333333;
+  font-size: 12px;
+  background: #f5f5f5 url("../../static/img/concrete-texture.png") repeat;
+  min-width: 1330px;
+  min-height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  /*滚动条整体样式*/
+  width: 10px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  background: #c20c0c;
+}
+
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.aplayer-volume-wrap,
+.aplayer-icon-loop {
+  visibility: hidden;
+}
+
+.ant-table-body {
+  table {
+    table-layout: fixed;
+  }
+
+  td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.ant-list-item-action {
+  margin-left: 0px;
+}
+
+#appLoading {
+  width: 100%;
+  height: 100%;
+}
+
+#appLoading span {
+  position: absolute;
+  display: block;
+  font-size: 24px;
+  line-height: 24px;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  -webkit-animation: slide-top 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite alternate both;
+  animation: slide-top 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite alternate both;
+}
+
+.slide-top {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(315deg, #cc6aa5, #3e91cc, #2dcca7);
+  background-size: 600% 600%;
+  background-repeat: repeat;
+  -webkit-animation: slide-top 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite alternate both;
+  animation: slide-top 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite alternate both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-55px);
+    transform: translateY(-55px);
+    -moz-transform: translateY(-55px);
+    -ms-transform: translateY(-55px);
+    -o-transform: translateY(-55px);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-55px);
+    transform: translateY(-55px);
+    -moz-transform: translateY(-55px);
+    -ms-transform: translateY(-55px);
+    -o-transform: translateY(-55px);
+  }
+}
