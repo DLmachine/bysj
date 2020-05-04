@@ -151,7 +151,7 @@ def top(request):
     for item in data:
         playlist={
             'id':item['playlist_id'],
-            'name':item['playlist_name'],
+            'name':item['playlist_info']['playlist']['name'],
             'coverImgUrl':item['playlist_info']['playlist']['coverImgUrl'],
         }
         res['playlists'].append(playlist)
@@ -165,7 +165,7 @@ def detail(request):
     res['playlist']={}
     for item in data:
         res['playlist']['id']=item['playlist_id']
-        res['playlist']['name']=item['playlist_name']
+        res['playlist']['name']=item['playlist_info']['playlist']['name']
         res['playlist']['creator']=item['playlist_info']['playlist']['creator']
         res['playlist']['createTime']=item['playlist_info']['playlist']['createTime']
         res['playlist']['trackIds']=item['playlist_info']['playlist']['trackIds']

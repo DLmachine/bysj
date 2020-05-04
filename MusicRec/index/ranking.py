@@ -3,7 +3,7 @@
 from playlist.models import PlayList
 from song.models import Song
 from sing.models import Sing
-from user.models import UserPlayListRec,UserSingRec,UserSongRec,User
+from user.models import UserPlayListRec,UserSongRec,User
 
 def rankResult(request):
     user = request.GET.get("username")

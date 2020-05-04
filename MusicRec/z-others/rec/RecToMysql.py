@@ -19,7 +19,7 @@ import json
 from MusicRec.settings import DB_HOST,DB_PORT,DB_USER,DB_PASSWD,DB_NAME
 from playlist.models import PlayListToSongs,PlayListToTag,PlayList
 from song.models import SongLysic,Song,SongTag,SongSim
-from user.models import User,UserTag,UserSim,UserUserRec,UserSingRec,UserPlayListRec,UserSongRec
+from user.models import User,UserTag,UserSim,UserPlayListRec,UserSongRec
 from sing.models import Sing,SingTag,SingSim
 
 
@@ -131,8 +131,8 @@ class ToMySQL:
 
 if __name__ == "__main__":
     tomysql = ToMySQL()
-    tomysql.UserUserRecToMySQL()
-    tomysql.UserSingRecToMySQL()
+    # tomysql.UserUserRecToMySQL()
+    # tomysql.UserSingRecToMySQL()
     tomysql.UserSongRecToMySQL()
-    tomysql.UserPlayListRecToMySQL()
+    # tomysql.UserPlayListRecToMySQL()
 

@@ -162,6 +162,6 @@ if __name__ == "__main__":
     tomysql = ToMySQL()
     # tomysql.SingTagToMySQL()
     # tomysql.SongTagToMySQL()
-    tomysql.UserSimToMySQL()
-    tomysql.SingSimToMySQL()
+    # # tomysql.UserSimToMySQL()
+    # tomysql.SingSimToMySQL()
     tomysql.SongSimToMySQL()

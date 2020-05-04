@@ -4,7 +4,7 @@ from sing.models import Sing,SingTag,SingSim
 from user.views import wirteBrowse,getLocalTime
 from song.models import Song
 
-from MusicRec.settings import SingerInfo
+from MusicRec.settings import SingerInfo,SingerAlbum
 def all(request):
     # 接口传入的tag参数
     tag = request.GET.get("tag")
@@ -108,7 +108,7 @@ def list(request):
     res={}
     res['artists']=[]
     for item in data:
-        print(item['artist'])
+
         res['artists'].append(
             item['artist']
         )
@@ -121,7 +121,7 @@ def top(request):
     res = {}
     res['artists'] = []
     for item in data:
-        print(item['artist'])
+
         res['artists'].append(
             item['artist']
         )
@@ -133,6 +133,17 @@ def artists(request):
     res = {}
 
     for item in data:
+        item.pop('_id')
         res=item
-    res.pop('_id')
+    return JsonResponse(res)
+
+def album(request):
+    id=int(request.GET.get('id'))
+    offset=int(request.GET.get('offset'))
+    limit=int(request.GET.get('limit'))
+    data=SingerAlbum.find({'id':id}).limit(limit).skip(offset*limit)
+    res={}
+    for item in data:
+        item.pop('_id')
+        res=item
     return JsonResponse(res)

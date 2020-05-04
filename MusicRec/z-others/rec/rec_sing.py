@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 """
-    Author: Thinkgamer
     Desc:
         基于物品的协同过滤推荐算法 ，给用户推荐歌手
     Step:
@@ -18,8 +17,8 @@ class RecSing:
 
     def __init__(self):
         self.playlist_mess_file = "../tomysql/data/pl_mess_all.txt"
-        self.playlist_song_mess_file = "../tomysql/data/pl_sing_id.txt"
-        self.song_mess_file = "../tomysql/data/song_mess_all.txt"
+        self.playlist_song_mess_file = "../tomysql/data/p1_sing_id.txt"
+        self.song_mess_file = "../tomysql/data/songs_mess_all.txt"
 
         self.user_singer_dict,self.singer_list = self.load_data()
         self.sing_sim = self.ItemSimilarityBest()

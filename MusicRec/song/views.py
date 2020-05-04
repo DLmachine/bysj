@@ -108,8 +108,9 @@ def songurl(request):
     data=SongUrl.find({'id':int(id)})
     res={}
     for item in data:
+        item.pop('_id')
         res=item
-    res.pop('_id')
+    res['data'][0]['url']='http://music.163.com/song/media/outer/url?id=%s.mp3'%(res['id'])
     return JsonResponse(res)
 
 def detail(request):
@@ -119,8 +120,8 @@ def detail(request):
     if len(ids_list)==1:
         data=SongDetail.find({'id':int(ids)})
         for item in data:
+            item.pop('_id')
             res=item
-        res.pop('_id')
     else:
         res['songs']=[]
         for id in ids_list:
@@ -136,9 +137,8 @@ def comment(request):
     data=SongComment.find({'id':int(ids)}).limit(int(limit))
     res={}
     for item in data:
+        item.pop('_id')
         res=item
-    res.pop('_id')
-    print(res)
     return JsonResponse(res)
 
 def lyric(request):
@@ -146,15 +146,17 @@ def lyric(request):
     data = SongLyric.find({'id': int(ids)})
     res={}
     for item in data:
+        item.pop('_id')
         res = item
-    res.pop('_id')
     return JsonResponse(res)
 
 def sim(request):
     ids = request.GET.get('id')
     data = SongSim.find({'id': int(ids)})
     res = {}
+    res['songs']={}
     for item in data:
+        item.pop('_id')
         res = item
-    res.pop('_id')
+
     return JsonResponse(res)

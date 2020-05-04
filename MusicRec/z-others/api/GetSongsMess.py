@@ -13,6 +13,7 @@
             歌词
 """
 import requests
+from MusicRec.MusicRec.settings import SongInfo,SongDetail,SongComment,SongLyric
 class GetSongMess:
     def __init__(self):
         self.detail_url = "https://api.imjad.cn/cloudmusic/?type=detail&id="
@@ -54,7 +55,11 @@ class GetSongMess:
                 print("%s - 歌曲id： %s" % (i,id))
                 # deatil => id,name,专辑id[al]，出版时间[publishTime],歌手信息[ar]
                 url_1 = self.detail_url + str(id)
-                res_1_json = requests.get(url_1).json()["songs"][0]
+                data=SongDetail.find({'id':int(id)})
+
+                res_1_json = {}
+                for item in data:
+                    res_1_json=item['songs'][0]
                 url_1_list=[
                     str(res_1_json["id"]),
                     str(res_1_json["name"]),
@@ -63,8 +68,12 @@ class GetSongMess:
                     "#".join([ str(one["id"]) for one in res_1_json['ar'] ] )
                 ]
                 # comments => 总的评论数，热门评论数
-                url_2 = self.comments_url + str(id)
-                res_2_json = requests.get(url_2).json()
+                data = SongComment.find({'id': int(id)})
+
+                res_2_json = {}
+                for item in data:
+                    res_2_json = item
+
                 try:
                     url_2_list = [
                         str(res_2_json["total"]),
@@ -74,20 +83,23 @@ class GetSongMess:
                     url_2_list = ["0", "0"]
                 # lysic => 歌词
                 # song => 大小，歌曲链接
-                url_3 = self.song_url + str(id)
-                res_3_json = requests.get(url_3).json()["data"][0]
-                url_3_list = [
-                    str(res_3_json["size"]),
-                    str(res_3_json["url"])
-                ]
+
+                # url_3 = self.song_url + str(id)
+                # res_3_json = requests.get(url_3).json()["data"][0]
+                # url_3_list = [
+                #     str(res_3_json["size"]),
+                #     str(res_3_json["url"])
+                # ]
                 try:
-                    url_4 = self.lyric_url + str(id)
-                    lysic = requests.get(url_4).json()["lrc"]["lyric"]
+                    data = SongLyric.find({'id': int(id)})
+                    lysic = {}
+                    for item in data:
+                        lysic = item["lrc"]["lyric"]
                     lysic = lysic.replace("\n","\\n")
                 except:
                     lysic = "null"
-                self.writeToFile(self.ids_all_file + "songs_mess_all.txt"," |+| ".join(url_1_list + url_2_list + url_3_list ))
-                self.writeToFile(self.ids_all_file + "songs_lysics_all.txt", str(res_1_json["id"]) + "\t" + lysic)
+                self.writeToFile(self.ids_all_file + "songs_mess_all.txt"," |+| ".join(url_1_list + url_2_list ))
+                self.writeToFile(self.ids_all_file + "songs_lysic_all.txt", str(res_1_json["id"]) + "\t" + lysic)
                 i += 1
             except Exception as e:
                 print("error: %s" % e)

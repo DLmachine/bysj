@@ -2,6 +2,7 @@
 import scrapy,requests
 from NetCloudMusic.items import NetCloudMusicPlaylistItem
 from NetCloudMusic.spiders.getComments import CommentCrawlClass
+
 class GetplaylistSpider(scrapy.Spider):
     name = 'getPlaylist'
     allowed_domains = ['music.163.com/',]

@@ -1,19 +1,27 @@
 # -*- coding:utf-8 -*-
-"""
-    Author: Thinkgamer
-    Desc:
-        计算歌手相似度
-"""
+
 import os
 import json
-
+from MusicRec.MusicRec.settings import PlaylistInfo
 class SingSim:
     def __init__(self):
+        self.writer=open("./data/sing_tag.txt","w",encoding="utf-8")
+        self.writeSingTags()
         self.singTags = self.getSingTags()
         print(self.singTags)
         self.sim = self.getSingSim()
         print(self.sim)
-
+    def writeSingTags(self):
+        for item in PlaylistInfo.find():
+            tags=item['playlist_info']['playlist']['tags']
+            tracks=item['playlist_info']['playlist']['tracks']
+            for track in tracks:
+                ars=track['ar']
+                for ar in ars:
+                    for tag in tags:
+                        content=str(ar['id'])+','+tag+'\n'
+                        self.writer.write(content)
+        self.writer.close()
     def getSingTags(self):
         singTagsDict = dict()
         for line in open("./data/sing_tag.txt","r",encoding="utf-8"):
@@ -44,7 +52,7 @@ class SingSim:
                 i += 1
                 print(str(i) + "\t" + sing1)
             json.dump(sim, open("./data/sing_sim.json","w",encoding="utf-8"))
-        print("歌曲相似度计算完毕！")
+        print("歌手相似度计算完毕！")
         return sim
 
     def transform(self):

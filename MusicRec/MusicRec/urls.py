@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^sing/', include('sing.urls'), name='sing'),
     url(r'^song/', include('song.urls'), name='song'),
     url(r'^user/', include('user.urls'), name='user'),
+    url(r'^mv/', include('mv.urls'), name='mv'),
 ]

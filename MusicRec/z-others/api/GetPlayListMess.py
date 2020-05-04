@@ -6,7 +6,7 @@
 """
 import requests
 import traceback
-
+from MusicRec.MusicRec.settings import PlaylistInfo
 # 获取每个歌单的信息类
 class PlayList:
     def __init__(self):
@@ -20,44 +20,29 @@ class PlayList:
         # 歌单包含的歌曲id信息
         self.trackid_mess = "./data/song_mess/"
 
-        self.ids_list = self.getIDs()
-        self.url = "https://api.imjad.cn/cloudmusic/?type=playlist&id="
         # 获得的歌单信息出错的歌单id
         self.error_id = list()
 
     # 由歌单url 获取歌单id
     def getIDs(self):
-        print("根据歌单链接获取歌单ID ...")
-        ids_list = list()
-        for line in open(self.playlist_file,"r",encoding="utf-8").readlines():
-            try:
-                id = line.strip().split("\t")[0].split("id=")[1]
-                ids_list.append(id)
-            except Exception as e:
-                print(e)
-                pass
-        print("获取歌单ID完成 ...")
-        return ids_list
+        data=PlaylistInfo.find()
+        for item in data:
+            yield item
+
 
     # 获取每个歌单的具体信息 url https://api.imjad.cn/cloudmusic/?type=playlist&id=2340739428
     def getEveryPlayListMess(self):
         print("获取每个歌单的具体信息")
         i = 0
-        while self.ids_list.__len__() !=0 :
-            i += 1
-            id = self.ids_list.pop()
-            url = self.url + str(id)
+        for item in self.getIDs():
             try:
-                print("%s - 歌单ID为：%s" % (i,id))
-                r = requests.get(url)
-                # 解析信息
-                self.getFormatPlayListMess(r.json())
+                self.getFormatPlayListMess(item['playlist_info'])
             except Exception as e:
                 # 获取出错将出错id写入记录一下，然后写入文件，出错时进行跳过
                 print(e)
                 traceback.print_exc()
                 print("歌单ID为：%s 获取出错，进行记录" % id)
-                self.error_id.append(id)
+                self.error_id.append(item['playlist_id'])
                 pass
             # break
         self.writeToFile(self.error_id_file,",".join(self.error_id))
@@ -108,10 +93,10 @@ class PlayList:
 
         # 歌单包含的歌曲信息
         t_list = list()
-        trackids = json_line["playlist"]["trackIds"]
+        trackids = json_line["playlist"]["tracks"]
         for one in trackids:
             t_list.append(str(one["id"]))
-        self.writeToFile(self.trackid_mess + "ids_all1.txt",str(playlist["id"])+"\t"+",".join(t_list))
+        self.writeToFile(self.trackid_mess + "ids_all.txt",str(playlist["id"])+"\t"+",".join(t_list))
 
     # 写入文件
     def writeToFile(self,filename,one):

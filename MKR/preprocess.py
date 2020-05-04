@@ -1,6 +1,6 @@
 import argparse
 import numpy as np
-
+import json
 RATING_FILE_NAME = dict({'movie': 'ratings.txt',
                          'book': 'BX-Book-Ratings.csv',
                          'music': 'user_artists.dat'})
@@ -31,10 +31,6 @@ def convert_rating():
     for line in open(file, encoding='utf-8').readlines()[1:]:
         array = line.strip().split(SEP[DATASET])
 
-        # remove prefix and suffix quotation marks for BX dataset
-        if DATASET == 'book':
-            array = list(map(lambda x: x[1:-1], array))
-
         item_index_old = array[1]
         if item_index_old not in item_index_old2new:  # the item is not in the final item set
             continue
@@ -54,10 +50,13 @@ def convert_rating():
 
     print('converting rating file ...')
     writer = open('./data/' + DATASET + '/ratings_final.txt', 'w', encoding='utf-8')
+    index_user_writer=open('./data/' + DATASET + '/index_user_id.json', 'w', encoding='utf-8')
+    index_user={}
     user_cnt = 0
     user_index_old2new = dict()
     for user_index_old, pos_item_set in user_pos_ratings.items():
         if user_index_old not in user_index_old2new:
+            index_user[user_cnt] = user_index_old
             user_index_old2new[user_index_old] = user_cnt
             user_cnt += 1
         user_index = user_index_old2new[user_index_old]
@@ -70,6 +69,8 @@ def convert_rating():
         for item in np.random.choice(list(unwatched_set), size=len(pos_item_set), replace=False):
             writer.write('%d\t%d\t0\n' % (user_index, item))
     writer.close()
+    index_user_writer.write(json.dumps(index_user))
+    index_user_writer.close()
     print('number of users: %d' % user_cnt)
     print('number of items: %d' % len(item_set))
 
@@ -83,7 +84,6 @@ def convert_kg():
     #实体索引对应kg文件的头节点
     writer = open('./data/' + DATASET + '/kg_final.txt', 'w', encoding='utf-8')
     file = open('./data/' + DATASET + '/kg.txt', encoding='utf-8')
-
     for line in file:
         array = line.strip().split('\t')
         head_old = array[0]

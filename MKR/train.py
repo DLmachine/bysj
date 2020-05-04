@@ -142,7 +142,7 @@ def train(args, data, show_loss, show_topk):
             legacy_init_op=legacy_init_op)
         builder.save()
 
-def get_feed_dict_for_rs(model, data, start, end, dropout=0.6):
+def get_feed_dict_for_rs(model, data, start, end, dropout=0.5):
 
     feed_dict = {model.user_indices: data[start:end, 0],
                  model.item_indices: data[start:end, 1],
@@ -154,7 +154,7 @@ def get_feed_dict_for_rs(model, data, start, end, dropout=0.6):
     return feed_dict
 
 
-def get_feed_dict_for_kge(model, kg, start, end, dropout=0.7):
+def get_feed_dict_for_kge(model, kg, start, end, dropout=0.5):
     feed_dict = {model.item_indices: kg[start:end, 0],
                  model.head_indices: kg[start:end, 0],
                  model.relation_indices: kg[start:end, 1],

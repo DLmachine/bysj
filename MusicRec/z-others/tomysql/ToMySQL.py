@@ -371,7 +371,7 @@ if __name__ == "__main__":
     tomysql = ToMySQL()
     # tomysql.playListSingMessToMySQL()
     # tomysql.playListMessToMysql()
-    # tomysql.userMessToMySQL()
+    tomysql.userMessToMySQL()
     # tomysql.SongLysicToMySQL()
     # tomysql.SingMessToMySQL()
     # tomysql.SongMessToMySQL()

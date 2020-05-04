@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from user.models import User, UserBrowse, UserTag, UserSim, UserUserRec,UserPlayListRec,UserSingRec,UserSongRec
+from user.models import User, UserBrowse, UserTag, UserSim,UserPlayListRec,UserSongRec
 
 
 class adminUserMess(admin.ModelAdmin):
@@ -75,15 +75,15 @@ class adminUserSim(admin.ModelAdmin):
     ordering = ("-user_id",)
 admin.site.register(UserSim, adminUserSim)
 
-
-class adminUserUserRec(admin.ModelAdmin):
-    # 将字段全部显示出来
-    list_display = ("user", "related", "sim",)
-    # 添加search bar，在指定的字段中searc
-    search_fields = ("user", "related", "sim",)
-    # 排序
-    ordering = ("-sim",)
-admin.site.register(UserUserRec, adminUserUserRec)
+#
+# class adminUserUserRec(admin.ModelAdmin):
+#     # 将字段全部显示出来
+#     list_display = ("user", "related", "sim",)
+#     # 添加search bar，在指定的字段中searc
+#     search_fields = ("user", "related", "sim",)
+#     # 排序
+#     ordering = ("-sim",)
+# admin.site.register(UserUserRec, adminUserUserRec)
 
 class adminUserPlayListRec(admin.ModelAdmin):
     # 将字段全部显示出来
@@ -94,14 +94,14 @@ class adminUserPlayListRec(admin.ModelAdmin):
     ordering = ("-sim",)
 admin.site.register(UserPlayListRec, adminUserPlayListRec)
 
-class adminUserSingRec(admin.ModelAdmin):
-    # 将字段全部显示出来
-    list_display = ("user", "related", "sim",)
-    # 添加search bar，在指定的字段中searc
-    search_fields = ("user", "related", "sim",)
-    # 排序
-    ordering = ("-sim",)
-admin.site.register(UserSingRec, adminUserSingRec)
+# class adminUserSingRec(admin.ModelAdmin):
+#     # 将字段全部显示出来
+#     list_display = ("user", "related", "sim",)
+#     # 添加search bar，在指定的字段中searc
+#     search_fields = ("user", "related", "sim",)
+#     # 排序
+#     ordering = ("-sim",)
+# admin.site.register(UserSingRec, adminUserSingRec)
 
 class adminUserSongRec(admin.ModelAdmin):
     # 将字段全部显示出来

@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from user.models import User,UserBrowse,UserTag,UserSim
 from playlist.models import PlayList
 import time
-
+from MusicRec.settings import PlaylistInfo
 def all(request):
     # 接口传入的tag参数
     tag = request.GET.get("tag")
@@ -92,21 +92,26 @@ def getRecBasedOne(u_id):
 # 获取用户创建的歌单
 def getUserCreatePL(uid):
     pls = PlayList.objects.filter(pl_creator__u_id=uid)
-    result = list()
+    res={}
+    res['playlist']=[]
+    for pl in pls:
+        one={}
+
+    return res
+
+# 获取用户创建的歌单
+def playlist(request):
+    uid=request.GET.get('uid')
+    pls = PlayList.objects.filter(pl_creator__u_id=uid)
+    res={}
+    res['playlist']=[]
     for one in pls:
-        result.append(
-            {
-                "pl_id": one.pl_id,
-                "pl_name":one.pl_name,
-                "pl_creator": one.pl_creator.u_name,
-                "pl_create_time": one.pl_create_time,
-                "pl_img_url": one.pl_img_url,
-                "pl_desc":one.pl_desc
-            }
-        )
-    return result
-
-
+        pl={}
+        data=PlaylistInfo.find({'playlist_id':one.pl_id})
+        for item in data:
+            pl=item['playlist_info']['playlist']
+            res['playlist'].append(pl)
+    return JsonResponse(res)
 # 用户浏览信息进行记录
 """
     user_name = models.CharField(blank=False, max_length=64, verbose_name="用户名")

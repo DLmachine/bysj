@@ -1,22 +1,31 @@
 # -*- coding:utf-8 -*-
-"""
-    Author: Thinkgamer
-    Desc:
-        计算歌曲相似度
-"""
+
 import os,django
-os.environ['DJANGO_SETTINGS_MODULE'] = 'MusicRec.MusicRec.settings'
-django.setup()
+# os.environ['DJANGO_SETTINGS_MODULE'] = 'MusicRec.settings'
+# django.setup()
 import json
 
-
+from MusicRec.MusicRec.settings import PlaylistInfo
 class SongSim:
     def __init__(self):
+        self.writer = open("./data/song_tag.txt", "w", encoding="utf-8")
+        self.writeSongTags()
         self.songTags = self.getSongTags()
         print(self.songTags)
         self.sim = self.getSongSim()
-        print(self.sim)
 
+        print(self.sim)
+    def writeSongTags(self):
+
+        for item in PlaylistInfo.find():
+            tags=item['playlist_info']['playlist']['tags']
+            tracks=item['playlist_info']['playlist']['tracks']
+            for track in tracks:
+                id=track['id']
+                for tag in tags:
+                    content=str(id)+','+tag+'\n'
+                    self.writer.write(content)
+        self.writer.close()
     def getSongTags(self):
         songTagsDict = dict()
         for line in open("./data/song_tag.txt","r",encoding="utf-8"):

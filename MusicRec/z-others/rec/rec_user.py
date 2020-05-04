@@ -9,6 +9,7 @@ import math
 
 class RecUser:
     def __init__(self):
+
         self.file = "../tomysql/data/pl_mess_all.txt"
 
         self.user_tags_count_dict = dict()  # 用户对标签的次数统计
