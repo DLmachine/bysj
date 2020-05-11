@@ -744,7 +744,7 @@
       <workItem from="1589006565425" duration="1056000" />
       <workItem from="1589010122272" duration="269000" />
       <workItem from="1589011409585" duration="1679000" />
-      <workItem from="1589079508824" duration="1550000" />
+      <workItem from="1589079508824" duration="2148000" />
     </task>
     <task id="LOCAL-00001" summary="用户登录完善，知道大部分api得数据格式，未来可能移步深度学习">
       <created>1585404317814</created>
@@ -764,7 +764,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265259000" />
+    <option name="totallyTimeSpent" value="265857000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
